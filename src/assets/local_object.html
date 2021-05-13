@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onload = () => {
+            let obj = {
+                name: "koko",
+                score: 30
+            }
+            // חייבים לעשות סטרינגיפי ששומרים בלוקאל
+            // כי הוא מכיר רק פרימטיבים
+            localStorage.setItem("student", JSON.stringify(obj));
+            if (localStorage["student"]) {
+                // כדי שנוכל לדבר עם המידע כאובייקט או מערך
+                //הופך אותו בחזרה לאובייקט ג׳ייסון
+                let rtObj = JSON.parse(localStorage["student"])
+                console.log(rtObj);
+            }
+        }
+    </script>
+</body>
+
+</html>
